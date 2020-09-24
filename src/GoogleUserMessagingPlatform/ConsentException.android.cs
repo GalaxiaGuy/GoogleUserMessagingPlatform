@@ -1,6 +1,6 @@
 ﻿using Xamarin.Google.UserMesssagingPlatform;
 
-namespace Google.UserMessagingPlatform
+namespace Plugin.GoogleUserMessagingPlatform
 {
     public partial class ConsentException
     {

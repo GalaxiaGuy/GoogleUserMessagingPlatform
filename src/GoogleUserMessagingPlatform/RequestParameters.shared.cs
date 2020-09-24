@@ -1,12 +1,11 @@
-﻿using System;
-
-namespace Google.UserMessagingPlatform
+﻿namespace Plugin.GoogleUserMessagingPlatform
 {
     public partial class RequestParameters
     {
-        public RequestParameters()
+        public bool IsTagForUnderAgeOfConsent
         {
-
+            get;
+            set;
         }
     }
 }

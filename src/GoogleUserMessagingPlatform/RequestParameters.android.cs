@@ -1,15 +1,9 @@
 ﻿using Xamarin.Google.UserMesssagingPlatform;
 
-namespace Google.UserMessagingPlatform
+namespace Plugin.GoogleUserMessagingPlatform
 {
     public partial class RequestParameters
     {
-        public bool IsTagForUnderAgeOfConsent
-        {
-            get;
-            set;
-        }
-
         public ConsentRequestParameters ToPlatform()
         {
             return new ConsentRequestParameters.Builder().SetTagForUnderAgeOfConsent(IsTagForUnderAgeOfConsent).Build();

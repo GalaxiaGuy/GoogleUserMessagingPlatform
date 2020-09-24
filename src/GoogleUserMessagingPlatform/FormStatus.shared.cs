@@ -1,4 +1,4 @@
-﻿namespace Google.UserMessagingPlatform
+﻿namespace Plugin.GoogleUserMessagingPlatform
 {
     public enum FormStatus
     {

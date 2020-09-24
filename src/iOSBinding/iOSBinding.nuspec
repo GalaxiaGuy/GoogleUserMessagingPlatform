@@ -2,11 +2,12 @@
 <package >
   <metadata>
     
-    <id>GamesWithGravitas.GoogleUserMessagingPlatform.iOSBinding</id>
+    <id>Plugin.GoogleUserMessagingPlatform.iOSBinding</id>
     <version>0.0.1-alpha</version>
     <title>Google UMP</title>
     <authors>Oliver Brown</authors>
     <owners>Oliver Brown</owners>
+    <projectUrl>https://github.com/GalaxiaGuy/GoogleUserMessagingPlatform</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>iOS bindings for the Google User Messaging Platform.</description>
 

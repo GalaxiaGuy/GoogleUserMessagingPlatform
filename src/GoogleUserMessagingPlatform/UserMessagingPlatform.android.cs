@@ -3,7 +3,7 @@ using Xamarin.Essentials;
 using Xamarin.Google.UserMesssagingPlatform;
 using static Xamarin.Google.UserMesssagingPlatform.UserMessagingPlatform;
 
-namespace Google.UserMessagingPlatform
+namespace Plugin.GoogleUserMessagingPlatform
 {
     public partial class UserMessagingPlatform :
         Java.Lang.Object,

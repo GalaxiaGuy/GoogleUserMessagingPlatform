@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Google.UserMessagingPlatform
+namespace Plugin.GoogleUserMessagingPlatform
 {
     public partial class ConsentException : Exception
     {

@@ -1,7 +1,7 @@
 ﻿using GoogleUserMessagingPlatform;
 using System.Linq;
 
-namespace Google.UserMessagingPlatform
+namespace Plugin.GoogleUserMessagingPlatform
 {
     public partial class ConsentDebugSettings
     {

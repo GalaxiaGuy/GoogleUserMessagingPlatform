@@ -3,13 +3,16 @@
   <PropertyGroup>
     <TargetFrameworks>netstandard2.0;Xamarin.iOS10;MonoAndroid9.0;</TargetFrameworks>
     <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
-    <RootNamespace>Google.UserMessagingPlatform</RootNamespace>
+    <RootNamespace>Plugin.GoogleUserMessagingPlatform</RootNamespace>
     <LangVersion>8.0</LangVersion>
     <Nullable>enable</Nullable>
-    <PackOnBuild>true</PackOnBuild>
-    <PackageId>GamesWithGravitas.GoogleUserMessagingPlatform</PackageId>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>    
+    <PackageId>Plugin.GoogleUserMessagingPlatform</PackageId>
     <PackageVersion>0.0.1-alpha</PackageVersion>
     <Authors>Oliver Brown</Authors>
+    <ProjectUrl>https://github.com/GalaxiaGuy/GoogleUserMessagingPlatform</ProjectUrl>
     <Description>A cross-platform binding for Google's User Messaging Platform (UMP) on Android and iOS.
 
 https://developers.google.com/admob/ump/android/quick-start
@@ -19,6 +22,7 @@ https://developers.google.com/admob/ump/ios/quick-start</Description>
   <ItemGroup>    
     <Compile Include="**\*.shared.cs" />
     <Compile Include="**\*.shared.*.cs" />
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0" PrivateAssets="All"/>
   </ItemGroup>
   
   <ItemGroup Condition=" $(TargetFramework.StartsWith('netstandard')) ">
@@ -37,6 +41,6 @@ https://developers.google.com/admob/ump/ios/quick-start</Description>
     <Compile Include="**\*.ios.cs" />
     <Compile Include="**\*.ios.*.cs" />
     <PackageReference Include="Xamarin.Essentials" Version="1.5.3.2" />
-    <PackageReference Include="GamesWithGravitas.GoogleUserMessagingPlatform.iOSBinding" Version="0.0.1-alpha" />
+    <PackageReference Include="Plugin.GoogleUserMessagingPlatform.iOSBinding" Version="0.0.1-alpha" />
   </ItemGroup>
 </Project>

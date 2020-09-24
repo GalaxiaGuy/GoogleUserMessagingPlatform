@@ -1,6 +1,6 @@
 ﻿using Xamarin.Essentials;
 
-namespace Google.UserMessagingPlatform
+namespace Plugin.GoogleUserMessagingPlatform
 {
     public partial class ConsentDebugSettings
     {
