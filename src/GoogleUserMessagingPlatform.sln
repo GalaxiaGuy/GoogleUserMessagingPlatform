@@ -1,0 +1,23 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iOSBinding", "iOSBinding\iOSBinding.csproj", "{2E3888FE-8B11-4884-B7EE-1ABF0634AB92}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoogleUserMessagingPlatform", "GoogleUserMessagingPlatform\GoogleUserMessagingPlatform.csproj", "{A60384FA-A5EF-45CD-A2AC-07939346F6CC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2E3888FE-8B11-4884-B7EE-1ABF0634AB92}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E3888FE-8B11-4884-B7EE-1ABF0634AB92}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E3888FE-8B11-4884-B7EE-1ABF0634AB92}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E3888FE-8B11-4884-B7EE-1ABF0634AB92}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A60384FA-A5EF-45CD-A2AC-07939346F6CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A60384FA-A5EF-45CD-A2AC-07939346F6CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A60384FA-A5EF-45CD-A2AC-07939346F6CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A60384FA-A5EF-45CD-A2AC-07939346F6CC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

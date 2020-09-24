@@ -1,0 +1,42 @@
+<Project Sdk="MSBuild.Sdk.Extras/2.0.54">
+
+  <PropertyGroup>
+    <TargetFrameworks>netstandard2.0;Xamarin.iOS10;MonoAndroid9.0;</TargetFrameworks>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    <RootNamespace>Google.UserMessagingPlatform</RootNamespace>
+    <LangVersion>8.0</LangVersion>
+    <Nullable>enable</Nullable>
+    <PackOnBuild>true</PackOnBuild>
+    <PackageId>GamesWithGravitas.GoogleUserMessagingPlatform</PackageId>
+    <PackageVersion>0.0.1-alpha</PackageVersion>
+    <Authors>Oliver Brown</Authors>
+    <Description>A cross-platform binding for Google's User Messaging Platform (UMP) on Android and iOS.
+
+https://developers.google.com/admob/ump/android/quick-start
+https://developers.google.com/admob/ump/ios/quick-start</Description>
+  </PropertyGroup>
+    
+  <ItemGroup>    
+    <Compile Include="**\*.shared.cs" />
+    <Compile Include="**\*.shared.*.cs" />
+  </ItemGroup>
+  
+  <ItemGroup Condition=" $(TargetFramework.StartsWith('netstandard')) ">
+    <Compile Include="**\*.netstandard.cs" />
+    <Compile Include="**\*.netstandard.*.cs" />
+  </ItemGroup>
+    
+  <ItemGroup Condition=" $(TargetFramework.StartsWith('MonoAndroid')) ">
+    <Compile Include="**\*.android.cs" />
+    <Compile Include="**\*.android.*.cs" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.5.3.2" />
+    <PackageReference Include="Xamarin.Google.UserlMessagingPlatform" Version="1.0.0-preview01" />
+  </ItemGroup>
+    
+  <ItemGroup Condition=" $(TargetFramework.StartsWith('Xamarin.iOS')) ">
+    <Compile Include="**\*.ios.cs" />
+    <Compile Include="**\*.ios.*.cs" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.5.3.2" />
+    <PackageReference Include="GamesWithGravitas.GoogleUserMessagingPlatform.iOSBinding" Version="0.0.1-alpha" />
+  </ItemGroup>
+</Project>

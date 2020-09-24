@@ -1,0 +1,22 @@
+﻿<?xml version="1.0"?>
+<package >
+  <metadata>
+    
+    <id>GamesWithGravitas.GoogleUserMessagingPlatform.iOSBinding</id>
+    <version>0.0.1-alpha</version>
+    <title>Google UMP</title>
+    <authors>Oliver Brown</authors>
+    <owners>Oliver Brown</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>iOS bindings for the Google User Messaging Platform.</description>
+
+    <dependencies>
+      <group targetFramework="Xamarin.iOS10" />
+    </dependencies>
+
+  </metadata>
+
+  <files>
+    <file src="bin\Release\NativeLibrary.dll" target="lib\Xamarin.iOS10" />
+  </files>
+</package>
