@@ -5,6 +5,8 @@ namespace Plugin.GoogleUserMessagingPlatform
 {
     public partial class UserMessagingPlatform
     {
+        public bool IsSupported => false;
+
         public Task<ConsentInformation> GetConsentInformationAsync(RequestParameters parameters)
             => throw new PlatformNotSupportedException();
 

@@ -8,6 +8,8 @@ namespace Plugin.GoogleUserMessagingPlatform
 {
     public partial class UserMessagingPlatform
     {
+        public bool IsSupported => true;
+
         public UMPConsentForm? Form { get; private set; }
 
         public Task<ConsentInformation> GetConsentInformationAsync(RequestParameters parameters)

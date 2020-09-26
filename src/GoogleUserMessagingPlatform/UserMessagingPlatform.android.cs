@@ -15,6 +15,8 @@ namespace Plugin.GoogleUserMessagingPlatform
     {
         private IConsentInformation? _consentInformation;
 
+        public bool IsSupported => true;
+
         public IConsentForm? Form { get; private set; }
 
         public Task<ConsentInformation> GetConsentInformationAsync(RequestParameters parameters)
