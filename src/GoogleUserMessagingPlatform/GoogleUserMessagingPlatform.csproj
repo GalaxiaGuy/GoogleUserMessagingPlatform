@@ -14,8 +14,7 @@
     <PackageVersion>0.0.4-alpha</PackageVersion>
     <Authors>Oliver Brown</Authors>
     <PackageProjectUrl>https://github.com/GalaxiaGuy/GoogleUserMessagingPlatform</PackageProjectUrl>
-    <PackageRepositoryUrl>https://github.com/GalaxiaGuy/GoogleUserMessagingPlatform</PackageRepositoryUrl>
-    <Summary>A cross-platform binding for Google's User Messaging Platform (UMP) on Android and iOS.</Summary>
+    <RepositoryUrl>https://github.com/GalaxiaGuy/GoogleUserMessagingPlatform</RepositoryUrl>
     <Description>A cross-platform binding for Google's User Messaging Platform (UMP) on Android and iOS.
 
 https://developers.google.com/admob/ump/android/quick-start
