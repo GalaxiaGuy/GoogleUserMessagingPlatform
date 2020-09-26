@@ -6,7 +6,11 @@ namespace Plugin.GoogleUserMessagingPlatform
     {
         public UMPRequestParameters ToPlatform()
         {
-            return new UMPRequestParameters { TagForUnderAgeOfConsent = IsTagForUnderAgeOfConsent };
+            return new UMPRequestParameters
+            {
+                TagForUnderAgeOfConsent = IsTagForUnderAgeOfConsent,
+                DebugSettings = DebugSettings.ToPlatform()
+            };
         }
     }
 }

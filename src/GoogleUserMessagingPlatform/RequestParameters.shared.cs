@@ -7,5 +7,11 @@
             get;
             set;
         }
+
+        public ConsentDebugSettings DebugSettings
+        {
+            get;
+            set;
+        } = new ConsentDebugSettings();
     }
 }

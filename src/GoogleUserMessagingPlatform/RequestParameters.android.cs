@@ -6,7 +6,10 @@ namespace Plugin.GoogleUserMessagingPlatform
     {
         public ConsentRequestParameters ToPlatform()
         {
-            return new ConsentRequestParameters.Builder().SetTagForUnderAgeOfConsent(IsTagForUnderAgeOfConsent).Build();
+            return new ConsentRequestParameters.Builder()
+                .SetTagForUnderAgeOfConsent(IsTagForUnderAgeOfConsent)
+                .SetConsentDebugSettings(DebugSettings.ToPlatform())
+                .Build();
         }
     }
 }
