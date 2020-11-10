@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 using Foundation;
-using GoogleUserMessagingPlatform;
+using Google.MobileAds.Consent;
 using UIKit;
 using Xamarin.Essentials;
 
@@ -10,13 +10,14 @@ namespace Plugin.GoogleUserMessagingPlatform
     {
         public bool IsSupported => true;
 
-        public UMPConsentForm? Form { get; private set; }
+        public ConsentForm? Form { get; private set; }
+        public Google.MobileAds.Consent.ConsentInformation ConsentInformationSharedInstance => Google.MobileAds.Consent.ConsentInformation.SharedInstance;
 
         public Task<ConsentInformation> GetConsentInformationAsync(RequestParameters parameters)
         {
             _consentInformationCompletionSource.TrySetCanceled();
             _consentInformationCompletionSource = new TaskCompletionSource<ConsentInformation>();
-            UMPConsentInformation.SharedInstance.RequestConsentInfoUpdateWithParameters(parameters.ToPlatform(), RequestConsentHandler);
+            ConsentInformationSharedInstance.RequestConsentInfoUpdateWithParameters(parameters.ToPlatform(), RequestConsentHandler);
             return _consentInformationCompletionSource.Task;
         }
 
@@ -28,9 +29,9 @@ namespace Plugin.GoogleUserMessagingPlatform
                 return;
             }
             var info = new ConsentInformation(
-                UMPConsentInformation.SharedInstance.ConsentStatus.ToConsentStatus(),
-                UMPConsentInformation.SharedInstance.ConsentType.ToConsentType(),
-                UMPConsentInformation.SharedInstance.FormStatus.ToFormStatus());
+                ConsentInformationSharedInstance.ConsentStatus.ToConsentStatus(),
+                ConsentInformationSharedInstance.ConsentType.ToConsentType(),
+                ConsentInformationSharedInstance.FormStatus.ToFormStatus());
             _consentInformationCompletionSource.TrySetResult(info);
         }
 
@@ -38,11 +39,11 @@ namespace Plugin.GoogleUserMessagingPlatform
         {
             _loadConsentFormCompletionSource.TrySetCanceled();
             _loadConsentFormCompletionSource = new TaskCompletionSource<bool>();
-            UMPConsentForm.LoadWithCompletionHandler(LoadConsentFormCompletionHandler);
+            ConsentForm.LoadWithCompletionHandler(LoadConsentFormCompletionHandler);
             return _loadConsentFormCompletionSource.Task;
         }
 
-        private void LoadConsentFormCompletionHandler(UMPConsentForm? form, NSError? error)
+        private void LoadConsentFormCompletionHandler(ConsentForm? form, NSError? error)
         {
             if (error != null)
             {
@@ -80,7 +81,7 @@ namespace Plugin.GoogleUserMessagingPlatform
 
         public void Reset()
         {
-            UMPConsentInformation.SharedInstance.Reset();
+            ConsentInformationSharedInstance.Reset();
         }
     }
 }

@@ -1,12 +1,10 @@
-﻿using GoogleUserMessagingPlatform;
-
-namespace Plugin.GoogleUserMessagingPlatform
+﻿namespace Plugin.GoogleUserMessagingPlatform
 {
     public partial class RequestParameters
     {
-        public UMPRequestParameters ToPlatform()
+        public Google.MobileAds.Consent.RequestParameters ToPlatform()
         {
-            return new UMPRequestParameters
+            return new Google.MobileAds.Consent.RequestParameters
             {
                 TagForUnderAgeOfConsent = IsTagForUnderAgeOfConsent,
                 DebugSettings = DebugSettings.ToPlatform()
