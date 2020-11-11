@@ -22,7 +22,7 @@
             return (DebugGeography)(int)geography;
         }
 
-        public static Google.MobileAds.Consent.DebugGeography ToUMPDebugGeography(this DebugGeography geography)
+        public static Google.MobileAds.Consent.DebugGeography ToPlatform(this DebugGeography geography)
         {
             return (Google.MobileAds.Consent.DebugGeography)(int)geography;
         }

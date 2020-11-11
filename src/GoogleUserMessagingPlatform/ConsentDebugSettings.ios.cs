@@ -8,7 +8,7 @@ namespace Plugin.GoogleUserMessagingPlatform
         {
             return new Google.MobileAds.Consent.DebugSettings
             {
-                Geography = Geography.ToUMPDebugGeography(),
+                Geography = Geography.ToPlatform(),
                 TestDeviceIdentifiers = iOSTestDeviceIds.ToArray(),
             };
         }
