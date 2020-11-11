@@ -1,15 +1,14 @@
-﻿using GoogleUserMessagingPlatform;
-using System.Linq;
+﻿using System.Linq;
 
 namespace Plugin.GoogleUserMessagingPlatform
 {
     public partial class ConsentDebugSettings
     {
-        public UMPDebugSettings ToPlatform()
+        public Google.MobileAds.Consent.DebugSettings ToPlatform()
         {
-            return new UMPDebugSettings
+            return new Google.MobileAds.Consent.DebugSettings
             {
-                Geography = Geography.ToUMPDebugGeography(),
+                Geography = Geography.ToPlatform(),
                 TestDeviceIdentifiers = iOSTestDeviceIds.ToArray(),
             };
         }
