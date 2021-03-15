@@ -9,7 +9,7 @@
         public ConsentInformation(ConsentStatus consentStatus, ConsentType consentType, FormStatus formStatus)
         {
             ConsentStatus = consentStatus;
-            ConsentType = ConsentType;
+            ConsentType = consentType;
             FormStatus = formStatus;
         }
     }

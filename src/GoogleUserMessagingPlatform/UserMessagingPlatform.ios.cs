@@ -1,7 +1,6 @@
 ﻿using System.Threading.Tasks;
 using Foundation;
 using Google.MobileAds.Consent;
-using UIKit;
 using Xamarin.Essentials;
 
 namespace Plugin.GoogleUserMessagingPlatform
@@ -15,7 +14,7 @@ namespace Plugin.GoogleUserMessagingPlatform
 
         public Task<ConsentInformation> GetConsentInformationAsync(RequestParameters parameters)
         {
-            _consentInformationCompletionSource.TrySetCanceled();
+            _ = _consentInformationCompletionSource.TrySetCanceled();
             _consentInformationCompletionSource = new TaskCompletionSource<ConsentInformation>();
             ConsentInformationSharedInstance.RequestConsentInfoUpdateWithParameters(parameters.ToPlatform(), RequestConsentHandler);
             return _consentInformationCompletionSource.Task;
@@ -25,19 +24,19 @@ namespace Plugin.GoogleUserMessagingPlatform
         {
             if (error != null)
             {
-                _consentInformationCompletionSource.TrySetException(new ConsentException(error));
+                _ = _consentInformationCompletionSource.TrySetException(new ConsentException(error));
                 return;
             }
             var info = new ConsentInformation(
                 ConsentInformationSharedInstance.ConsentStatus.ToConsentStatus(),
                 ConsentInformationSharedInstance.ConsentType.ToConsentType(),
                 ConsentInformationSharedInstance.FormStatus.ToFormStatus());
-            _consentInformationCompletionSource.TrySetResult(info);
+            _ = _consentInformationCompletionSource.TrySetResult(info);
         }
 
         public Task LoadConsentFormAsync()
         {
-            _loadConsentFormCompletionSource.TrySetCanceled();
+            _ = _loadConsentFormCompletionSource.TrySetCanceled();
             _loadConsentFormCompletionSource = new TaskCompletionSource<bool>();
             ConsentForm.LoadWithCompletionHandler(LoadConsentFormCompletionHandler);
             return _loadConsentFormCompletionSource.Task;
@@ -47,20 +46,20 @@ namespace Plugin.GoogleUserMessagingPlatform
         {
             if (error != null)
             {
-                _loadConsentFormCompletionSource.TrySetException(new ConsentException(error));
+                _ = _loadConsentFormCompletionSource.TrySetException(new ConsentException(error));
                 return;
             }
             Form = form;
-            _loadConsentFormCompletionSource.TrySetResult(true);
+            _ = _loadConsentFormCompletionSource.TrySetResult(true);
         }
 
         public Task ShowFormAsync()
         {
-            _presentConsentFormCompletionSource.TrySetCanceled();
+            _ = _presentConsentFormCompletionSource.TrySetCanceled();
             _presentConsentFormCompletionSource = new TaskCompletionSource<bool>();
             if (Form == null)
             {
-                _presentConsentFormCompletionSource.TrySetException(ConsentException.UnknownError);
+                _ = _presentConsentFormCompletionSource.TrySetException(ConsentException.UnknownError);
             }
             else
             {
@@ -73,10 +72,10 @@ namespace Plugin.GoogleUserMessagingPlatform
         {
             if (error != null)
             {
-                _presentConsentFormCompletionSource.TrySetException(new ConsentException(error));
+                _ = _presentConsentFormCompletionSource.TrySetException(new ConsentException(error));
                 return;
             }
-            _presentConsentFormCompletionSource.TrySetResult(true);
+            _ = _presentConsentFormCompletionSource.TrySetResult(true);
         }
 
         public void Reset()

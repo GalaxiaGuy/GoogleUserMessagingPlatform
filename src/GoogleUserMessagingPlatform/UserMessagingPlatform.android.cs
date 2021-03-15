@@ -21,7 +21,7 @@ namespace Plugin.GoogleUserMessagingPlatform
 
         public Task<ConsentInformation> GetConsentInformationAsync(RequestParameters parameters)
         {
-            _consentInformationCompletionSource?.TrySetCanceled();
+            _ = _consentInformationCompletionSource?.TrySetCanceled();
             _consentInformationCompletionSource = new TaskCompletionSource<ConsentInformation>();
             _consentInformation = GetConsentInformation(Platform.CurrentActivity);
             _consentInformation.RequestConsentInfoUpdate(Platform.CurrentActivity, parameters.ToPlatform(), this, this);
@@ -32,7 +32,7 @@ namespace Plugin.GoogleUserMessagingPlatform
         {
             if (_consentInformation == null)
             {
-                _consentInformationCompletionSource.TrySetException(ConsentException.UnknownError);
+                _ = _consentInformationCompletionSource.TrySetException(ConsentException.UnknownError);
             }
             else
             {
@@ -40,18 +40,18 @@ namespace Plugin.GoogleUserMessagingPlatform
                     _consentInformation.ConsentStatus.ToConsentStatus(),
                     _consentInformation.ConsentType.ToConsentType(),
                     _consentInformation.IsConsentFormAvailable ? FormStatus.Available : FormStatus.Unavailable);
-                _consentInformationCompletionSource.TrySetResult(info);
+                _ = _consentInformationCompletionSource.TrySetResult(info);
             }
         }
 
         void IConsentInformationOnConsentInfoUpdateFailureListener.OnConsentInfoUpdateFailure(FormError formError)
         {
-            _consentInformationCompletionSource.TrySetException(new ConsentException(formError));
+            _ = _consentInformationCompletionSource.TrySetException(new ConsentException(formError));
         }
 
         public Task LoadConsentFormAsync()
         {
-            _loadConsentFormCompletionSource.TrySetCanceled();
+            _ = _loadConsentFormCompletionSource.TrySetCanceled();
             _loadConsentFormCompletionSource = new TaskCompletionSource<bool>();
             LoadConsentForm(Platform.CurrentActivity, this, this);
             return _loadConsentFormCompletionSource.Task;
@@ -60,21 +60,21 @@ namespace Plugin.GoogleUserMessagingPlatform
         void IOnConsentFormLoadSuccessListener.OnConsentFormLoadSuccess(IConsentForm form)
         {
             Form = form;
-            _loadConsentFormCompletionSource.TrySetResult(true);
+            _ = _loadConsentFormCompletionSource.TrySetResult(true);
         }
 
         void IOnConsentFormLoadFailureListener.OnConsentFormLoadFailure(FormError formError)
         {
-            _loadConsentFormCompletionSource.TrySetException(new ConsentException(formError));
+            _ = _loadConsentFormCompletionSource.TrySetException(new ConsentException(formError));
         }
 
         public Task ShowFormAsync()
         {
-            _presentConsentFormCompletionSource.TrySetCanceled();
+            _ = _presentConsentFormCompletionSource.TrySetCanceled();
             _presentConsentFormCompletionSource = new TaskCompletionSource<bool>();
             if (Form == null)
             {
-                _presentConsentFormCompletionSource.TrySetException(ConsentException.UnknownError);
+                _ = _presentConsentFormCompletionSource.TrySetException(ConsentException.UnknownError);
             }
             else
             {
@@ -87,10 +87,10 @@ namespace Plugin.GoogleUserMessagingPlatform
         {
             if (formError != null)
             {
-                _presentConsentFormCompletionSource.TrySetException(new ConsentException(formError));
+                _ = _presentConsentFormCompletionSource.TrySetException(new ConsentException(formError));
                 return;
             }
-            _presentConsentFormCompletionSource.TrySetResult(true);
+            _ = _presentConsentFormCompletionSource.TrySetResult(true);
         }
 
         public void Reset()
