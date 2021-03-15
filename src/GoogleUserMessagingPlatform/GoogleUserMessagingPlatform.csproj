@@ -19,6 +19,7 @@
 
 https://developers.google.com/admob/ump/android/quick-start
 https://developers.google.com/admob/ump/ios/quick-start</Description>
+    <Configurations>Release;Debug</Configurations>
   </PropertyGroup>
     
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">

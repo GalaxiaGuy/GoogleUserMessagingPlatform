@@ -14,7 +14,7 @@ https://developers.google.com/admob/ump/ios/quick-start
 Uses the Android binding from Xamarin Components:
 
 https://github.com/xamarin/XamarinComponents/
-https://www.nuget.org/packages/Xamarin.Google.UserlMessagingPlatform/1.0.0-preview01
+https://www.nuget.org/packages/Xamarin.Google.UserMessagingPlatform/1.0.0
 
 ### iOS
 
