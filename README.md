@@ -24,7 +24,10 @@ https://www.nuget.org/packages/Xamarin.Google.UserMessagingPlatform/1.0.0
 
 ### iOS
 
-Uses the iOS UMP binding that is currently part of [Xamarin.Google.iOS.MobileAds](https://www.nuget.org/packages/Xamarin.Google.iOS.MobileAds/).
+Uses the iOS UMP binding that is currently part of Xamarin.Google.iOS.MobileAds:
+
+https://github.com/xamarin/GoogleApisForiOSComponents
+https://www.nuget.org/packages/Xamarin.Google.iOS.MobileAds/7.66.0
 
 ## Usage
 
