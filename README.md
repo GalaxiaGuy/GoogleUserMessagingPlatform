@@ -11,21 +11,20 @@ Available (as a preview) on Nuget [Plugin.GoogleUserMessagingPlatform](https://w
 
 [![Nuget (with prereleases)](https://img.shields.io/nuget/vpre/Plugin.GoogleUserMessagingPlatform)](https://www.nuget.org/packages/Plugin.GoogleUserMessagingPlatform/)
 
-You must add the package to your iOS and Android head projects, as well as an shared projects you want to access the library from.
+You must add the package to your iOS and Android head projects, as well as any shared projects you want to access the library from.
 
 ## Implementation
 
 ### Android
 
-Uses the Android binding from Xamarin Components:
+Uses the Android UMP binding from Xamarin Components:
 
 https://github.com/xamarin/XamarinComponents/
 https://www.nuget.org/packages/Xamarin.Google.UserMessagingPlatform/1.0.0
 
 ### iOS
 
-Currently uses an included iOS binding.
-
+Uses the iOS UMP binding that is currently part of [Xamarin.Google.iOS.MobileAds](https://www.nuget.org/packages/Xamarin.Google.iOS.MobileAds/).
 
 ## Usage
 
