@@ -5,7 +5,11 @@ A cross-platform wrapper for Google's User Messaging Platform for Android and iO
 https://developers.google.com/admob/ump/android/quick-start
 https://developers.google.com/admob/ump/ios/quick-start
 
-![Nuget (with prereleases)](https://img.shields.io/nuget/vpre/Plugin.GoogleUserMessagingPlatform)
+## Installation
+
+Available (as a preview) on Nuget [Plugin.GoogleUserMessagingPlatform](https://www.nuget.org/packages/Plugin.GoogleUserMessagingPlatform/)
+
+[![Nuget (with prereleases)](https://img.shields.io/nuget/vpre/Plugin.GoogleUserMessagingPlatform)](https://www.nuget.org/packages/Plugin.GoogleUserMessagingPlatform/)
 
 ## Implementation
 
