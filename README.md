@@ -11,6 +11,8 @@ Available (as a preview) on Nuget [Plugin.GoogleUserMessagingPlatform](https://w
 
 [![Nuget (with prereleases)](https://img.shields.io/nuget/vpre/Plugin.GoogleUserMessagingPlatform)](https://www.nuget.org/packages/Plugin.GoogleUserMessagingPlatform/)
 
+You must add the package to your iOS and Android head projects, as well as an shared projects you want to access the library from.
+
 ## Implementation
 
 ### Android
