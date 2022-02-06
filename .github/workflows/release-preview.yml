@@ -1,0 +1,23 @@
+on:
+  push:
+    tags:
+    - "v[0-9]+.[0-9]+.[0-9]+-preview[0-9][0-9][0-9]"
+jobs:
+  build:
+    runs-on: macos-latest
+    timeout-minutes: 15
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+    - name: Setup dotnet
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 5.x
+    - name: Set VERSION variable from tag
+      run: echo "VERSION=${GITHUB_REF/refs\/tags\/v/}" >> $GITHUB_ENV
+    - name: Restore
+      run: msbuild /t:Restore /p:Configuration="Release" "src/GoogleUserMessagingPlatform" /p:Version=${VERSION}
+    - name: Build and pack
+      run: msbuild /t:Build /p:Configuration="Release" "src/GoogleUserMessagingPlatform" /p:Version=${VERSION}
+    - name: Push nuget package
+      run: dotnet nuget push src/GoogleUserMessagingPlatform/bin/Release/Plugin.GoogleUserMessagingPlatform.${VERSION}.nupkg --source https://nuget.pkg.github.com/GalaxiaGuy/index.json --api-key ${{ secrets.GITHUB_TOKEN }}
