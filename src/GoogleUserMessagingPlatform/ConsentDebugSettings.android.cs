@@ -7,7 +7,7 @@ namespace Plugin.GoogleUserMessagingPlatform
         public Xamarin.Google.UserMesssagingPlatform.ConsentDebugSettings ToPlatform()
         {
             var builder = new Xamarin.Google.UserMesssagingPlatform.ConsentDebugSettings.Builder(Platform.CurrentActivity)
-                .SetDebugGeography((int)Geography);
+                .SetDebugGeography(Geography.ToPlatform());
 
             foreach (var id in AndroidTestDeviceIds)
             {
